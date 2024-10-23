@@ -1,0 +1,249 @@
+/* Import Merriweather font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+/* General Styling */
+body {
+  font-family: 'Merriweather', serif;
+  color: #2c2c2c;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+/* Hero Section */
+.hero {
+  background: url('../../images/mercedes-hero.jpg') center/cover no-repeat;
+  color: white;
+  padding: 150px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6);
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Section */
+#about {
+  padding: 60px 30px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+#about h2 {
+  font-size: 2.8em;
+  text-align: center;
+  color: #2a2a2a;
+  margin-bottom: 40px;
+  position: relative;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+
+#about h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #c0c0c0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+#about p {
+  font-family: 'Merriweather', serif;
+  font-size: 1.3em;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+#about p:first-of-type {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #222;
+}
+
+#about ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+#about ul li {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  padding-left: 40px;
+  position: relative;
+  color: #555;
+}
+
+#about ul li::before {
+  content: "\2022";
+  font-size: 1.8em;
+  color: #999;
+  position: absolute;
+  left: 0;
+  top: -5px;
+}
+
+/* Key Models Styling */
+#about h3 {
+  font-size: 2em;
+  color: #333;
+  margin-top: 50px;
+  font-weight: 600;
+}
+
+#about p.model-tagline {
+  font-style: italic;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  color: #555;
+  font-size: 1.2em;
+}
+
+/* Testimonials Section */
+#testimonials {
+  padding: 60px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#testimonials h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+
+.testimonial-slider {
+  display: flex;
+  gap: 20px;
+}
+
+.testimonial {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+  font-family: 'Merriweather', serif;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.testimonial cite {
+  font-size: 1em;
+  color: #888;
+  display: block;
+  text-align: right;
+}
+
+/* Button Styling */
+#learnMore {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.3em;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#learnMore:hover {
+  background-color: #444;
+}
+
+/* Footer Styling */
+footer {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9em;
+  color: #bbb;
+}
+
+footer a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+.footer-links {
+  margin: 20px 0;
+}
+
+.footer-icons a {
+  margin: 0 10px;
+  font-size: 1.2em;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5em;
+  }
+
+  #about p {
+    font-size: 1.1em;
+  }
+
+  .testimonial-slider {
+    flex-direction: column;
+  }
+}

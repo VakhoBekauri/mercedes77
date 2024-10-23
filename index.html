@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercedes-Benz</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li id="home-link">Home</li>
+          <li id="about-link">About</li>
+          <li id="models-link">Models</li>
+          <li id="gallery-link">Gallery</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Experience the Pinnacle of Luxury</h1>
+          <button class="explore-button" id="explore-car-btn">
+            Explore Our Models
+          </button>
+        </div>
+      </section>
+
+      <!-- Thank You Modal -->
+      <div id="thankYouModal" style="font-size: 16px"></div>
+
+      <section id="models">
+        <h2>Our Models</h2>
+        <div class="model-grid">
+          <div class="model-card">
+            <img
+              src="https://wallpapers.com/images/hd/4k-mercedes-benz-g-class-white-zdsquoxfhj87ruey.jpg"
+              alt="Model 1"
+            />
+            <h3>Model 1</h3>
+            <p>Luxury and performance combined.</p>
+          </div>
+          <div class="model-card">
+            <img
+              src="https://images3.alphacoders.com/108/thumb-1920-1081108.jpg"
+              alt="Model 2"
+            />
+            <h3>Model 2</h3>
+            <p>Elegance redefined.</p>
+          </div>
+          <div class="model-card">
+            <img
+              src="https://www.topgear.com/sites/default/files/images/news-article/carousel/2021/02/8a720e3425a4076f8ee5acdcb8514f68/21c0053_001.jpg"
+              alt="Model 3"
+            />
+            <h3>Model 3</h3>
+            <p>Experience the thrill of driving.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial">
+            <p>"Mercedes-Benz offers the best driving experience!"</p>
+          </div>
+          <div class="testimonial">
+            <p>"Luxury, performance, and style all in one."</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <form id="newsletter-form">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            required
+            id="email-input"
+          />
+          <button type="submit">Subscribe</button>
+          <div id="success-message" style="display: none; color: #4caf50">
+            Thank you for subscribing!
+          </div>
+          <div id="error-message" style="display: none; color: #ff0000">
+            Please enter a valid email address.
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Mercedes-Benz. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="/pages/privacy.html">Privacy Policy</a>
+        <a href="/pages/terms.html">Terms of Service</a>
+        <a href="/pages/contact/contact.html">Contact Us</a>
+      </div>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com" target="_blank">📘</a>
+        <a href="https://www.twitter.com" target="_blank">🐦</a>
+        <a href="https://www.instagram.com" target="_blank">📸</a>
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+      document
+        .getElementById("home-link")
+        .addEventListener("click", function () {
+          window.location.href = "/index.html";
+        });
+
+      document
+        .getElementById("about-link")
+        .addEventListener("click", function () {
+          window.location.href = "/pages/about/about.html";
+        });
+
+      document
+        .getElementById("models-link")
+        .addEventListener("click", function () {
+          window.location.href = "/pages/models/models.html";
+        });
+
+      document
+        .getElementById("gallery-link")
+        .addEventListener("click", function () {
+          window.location.href = "/pages/gallery/gallery.html";
+        });
+
+      document
+        .getElementById("explore-car-btn")
+        .addEventListener("click", function () {
+          window.location.href = "/pages/models/models.html";
+        });
+
+      document
+        .getElementById("newsletter-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const emailInput = document.getElementById("email-input");
+          const successMessage = document.getElementById("success-message");
+          const errorMessage = document.getElementById("error-message");
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (emailPattern.test(emailInput.value)) {
+            emailInput.value = ""; // Clear input field
+            showModal();
+            successMessage.style.display = "block";
+            errorMessage.style.display = "none";
+          } else {
+            errorMessage.style.display = "block";
+            successMessage.style.display = "none";
+          }
+        });
+
+      function showModal() {
+        document.getElementById("thankYouModal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("thankYouModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
